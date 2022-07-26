@@ -1,0 +1,577 @@
+> stryker --version
+6.1.2
+
+> stryker run --logLevel
+
+[36m18:42:22 (26736) DEBUG ConfigReader[39m Loading config from stryker.conf.mjs
+[36m18:42:22 (26736) DEBUG ConfigReader[39m Loaded config: {
+  "_comment": "This config was generated using 'stryker init'. Please see the guide for more information: https://stryker-mutator.io/docs/stryker-js/guides/angular",
+  "mutate": [
+    "renderer/**/*.ts",
+    "!renderer/**/*.spec.ts",
+    "!renderer/test.ts",
+    "!renderer/environments/*.ts"
+  ],
+  "testRunner": "karma",
+  "karma": {
+    "configFile": "karma.conf.js",
+    "projectType": "angular-cli",
+    "config": {
+      "browsers": [
+        "ChromeHeadless"
+      ]
+    }
+  },
+  "reporters": [
+    "progress",
+    "clear-text",
+    "html"
+  ],
+  "concurrency": 8,
+  "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
+  "coverageAnalysis": "perTest",
+  "logLevel": "trace",
+  "allowConsoleColors": true,
+  "checkers": [],
+  "checkerNodeArgs": [],
+  "maxTestRunnerReuse": 0,
+  "commandRunner": {
+    "command": "npm test"
+  },
+  "clearTextReporter": {
+    "allowColor": true,
+    "logTests": true,
+    "maxTestsToLog": 3
+  },
+  "dashboard": {
+    "baseUrl": "https://dashboard.stryker-mutator.io/api/reports",
+    "reportType": "full"
+  },
+  "eventReporter": {
+    "baseDir": "reports/mutation/events"
+  },
+  "ignorePatterns": [],
+  "ignoreStatic": false,
+  "fileLogLevel": "off",
+  "inPlace": false,
+  "maxConcurrentTestRunners": 9007199254740991,
+  "mutator": {
+    "plugins": null,
+    "excludedMutations": []
+  },
+  "plugins": [
+    "@stryker-mutator/*"
+  ],
+  "appendPlugins": [],
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "disableTypeChecks": "{test,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+  "symlinkNodeModules": true,
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "testRunnerNodeArgs": [],
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": null
+  },
+  "timeoutFactor": 1.5,
+  "timeoutMS": 5000,
+  "dryRunTimeoutMinutes": 5,
+  "tsconfigFile": "tsconfig.json",
+  "warnings": true,
+  "disableBail": false
+}
+[36m18:42:22 (26736) DEBUG PluginLoader[39m Loading @stryker-mutator/* from C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules\@stryker-mutator
+[36m18:42:22 (26736) DEBUG PluginLoader[39m Loading plugin "@stryker-mutator/karma-runner" (matched with expression @stryker-mutator/*)
+[36m18:42:22 (26736) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:22 (26736) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:22 (26736) DEBUG MetaSchemaBuilder[39m Contributing 1 schemas from plugins to options validation.
+[32m18:42:22 (26736) INFO ProjectReader[39m Found 4 of 277 file(s) to be mutated.
+[36m18:42:22 (26736) DEBUG ProjectReader[39m All input files: [
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\5392504848915f97e785aceeede200bbe2150c9a\\0.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\5392504848915f97e785aceeede200bbe2150c9a\\index.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\b26bc5152f76b230a59082f955a8b459071ac68a\\0.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\b26bc5152f76b230a59082f955a8b459071ac68a\\1.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\b26bc5152f76b230a59082f955a8b459071ac68a\\2.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\b26bc5152f76b230a59082f955a8b459071ac68a\\index.pack",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\angular-webpack\\b26bc5152f76b230a59082f955a8b459071ac68a\\index.pack.old",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\01944dac7426d49aa681940556a8eb8c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\028d48c0e3404a1e0e572ad5e0510671.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0303bc14789b64862ccd204f43bf367c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\030a3b24b349f8d251d6a342013a10f7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0448c3d2ea1328303926cd1688b3e0a7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\04a52bf90907d9c0be6cba6645f8910d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0598ce6dd0bc8d7434be9362470e0508.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\06436d61c31e3ce87ae5c74d9233b486.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\067539840c74c2c9f4565a53f3182adc.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\06d6866bc59bb8e924425328e767b3fb.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\093ce5c37ec321a8e79076f0aa10e155.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\09775be204443574b7dd5cce3c5cd581.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\09f7f244a0132f47d4400c1c5d5cd0a4.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0a3d12d20a5d23ca8bdeed94143c4ead.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0aa8e0c5ccb01a6b4bc5e9c3d8da2b75.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0e123cccb271da55d55f0425510d4bcd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\0fea5cc2f51e1bec2c842e442af50711.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1189562c3bf59df11b202c98b9d4f450.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\122057b5842f0643c2a98412c6f9d520.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\138ef281ec80a1ecd121fff7dd944ea5.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\142b22eb039bcda65c5cddd8366cff0a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\153c1609d1e6f47cfea5dcb9d992fd4b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\188e4428918ce8ff51d0dbe1bf4b90b9.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\18d0ebe481705d1c246a6969e5a658fa.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1954fd6e0deb4276143e8954a62b9c82.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1b79455f8482a2124af673110036d60a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1bb921ac314580bd76fcd6478f46d906.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1bd387379a84b7315f996a3b1215830b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1bfd5753efadb8dc40eac7acc2f836a2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1ca7de686b26cce4fcbb3452db1e95fd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1cda5fd5d8287c29a2977ebe9ad1227d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\1e4423241d369d799abe450e7421cf3b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2002d93513085212578d3120c983620b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\20df144a5c8e55f24111ca81ce9e0607.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\240c5c63d38590fe587f92e70498d65e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\247cc3eb15fa500fc879b3f5b55f01dc.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2590d80c4e8c4e0862707e019be3ce3b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\26ba9aaf4c15caaaee01880efb9c2a05.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\27a640cc64a01b2bb58455ae4a334f1d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\27ca911028c6c936cde1ec77c629d206.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\282d622356b4391b4e0f240578e0b6ef.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2a41cdee0bf26b9eb08cd8066cd4dae7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2adff8ad0f36832822d523373339c58f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2fa547ecb4f9829c4ab5d2472dc58755.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\2fbfe1498031f1aaab013a33cd63fc88.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\32ee1f4aafda6b319062e2781f46f5c7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\33603416375331070a76d6c47f8fc192.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3462429db9c5dd4eee8e51400334894d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\35477a0305bd42180ae8845af28bfc78.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\356623c46b3c12ccf02175e4e1d5567b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\35babf1aacd57bb2ee57775b14486325.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\36d22d71e82d1c3006b7e03370053fec.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\36da9a714bdf5d9a32c112285a061f55.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\378424f1e63cef98dbc5a236cb8aa70b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\393667995eab4e45829cfdb8be28e1c7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3a2232b232693a30e619026fe400f559.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3a3078ce23ee7c9c7f4c305c7a73e7c1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3b16efa6cdc6e839775fea8f0939f8ee.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3d72a9dde0c194b41019f31c159a888d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3d99c734d3635e941557bb0a92e1ea63.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3e06499b26077831cddcd3f64deb2f56.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3e972785fdba472bd155b3faf07f0605.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3f6e303a4e995fd06a69f3007537e239.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\3f90d1f08e4e52dd2b14a16e4419835d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\40726b26585d72e82e5d8330e9724606.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\40c843fb6cf34502d1b38b73a652d5db.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\420bf23a4c96702e5d3d333e079a1096.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\446f3c0b444061944ad45ba199b85be1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4539771013b5cc73f3cd585877ce1f45.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\458a6713652e30f1a1fa8771418173a9.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\458f1f32f52420a853a0886657fee8a6.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\45bfd336a5450f1e08679df4054c12fe.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\46a867cd5d0d5b90361b879967e9c05e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\489e7a09f6655fd543038c32e3f641fe.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\48adc7bd1737a6fcf8193e16e17f9f95.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4ac2b4a0b3d88873104ba6242de31b18.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4acbc9b94c9ad17be8f120f2364d38f3.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4b207ed21d7c8e2fb7552257bd032aba.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4b595aa04bc51cb762d99d5705ce5e49.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4b64f12e324300dac7e047a243dcd7aa.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4c59d103b0763b6cecaf4fd0a42b7fba.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4cc0eb73bca0acb8363da5fbb518f0b1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4dd417867fa7d6a621937caac2460534.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4e4614db589683fe18cf3c05b4a8b533.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\4ecdad35c932ce90d6a53b06239a08fd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\50fc29459b0dcaeca1d0609acfc7a4e1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\51cc133b3155294d5ca1bd21ace5cf1d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\520f872513e3320ceefb8ddfffe4562a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\560377212cce2960799508c4c8318679.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\563b0c69ccd9a96bf880a2c9e1d8a64a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\5740cab50553e7ada3e1d88cebf89667.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\58442a29cb86c875b2bdf0757bcca41e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\58cc8cf3fbeccd55cc6d3596c753be6e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\59046a5426ca1c3ed9ccd37c27000d64.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\5ac6ee2dbaa9b37f9636d512e774d5d8.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\5c650de62f75af80bb39b852c95b1ec9.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6044b78907c5aa2050191bddfa942f2d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\62792a7c6791ad00b027bc7eb1d7f118.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6664a3eebe8f3167bcd4ce3878d3817e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\66708ff26b06e9c6e0e53f571f93adc3.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6755ff1887693f5f1079ffdbdab0074d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\67ae3d2e4ac05b29200b45c96d00aef8.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\67c0cebb5c226151cad0b488f74bf0ca.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\68e1625886416cb44acbcd8300081b13.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\695422d594a5b9a3ea61c7bc86a65f56.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6a13c50bf9e7673873a0c8c3b84afad5.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6adce28034fbd9fe228f09d59f9f7303.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6e776ca6e89bfcc7312e9d472bd2faa2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\6ed376b81a1328bcfaaf2e6d49b144f2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\70137f326d63f7adb3781e48b885993f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\70467418c74601342e0be98c7c2b97fe.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7076302c7675603875be1bb20c9c7107.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\70fe89c77222c35472eeb25cfedaf5a1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7102fd116103bc297ec243565e5eddde.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\732b02c5071c2c67302417bbdfebdc0a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\73eaf4a1a8d6bb93b2e3eab81a922e61.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\74861ba41cf21c00569b34b286e7c5e9.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7534e20b357a89fc359815c0954baa46.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\79357dea7dbefdde0344c1c8ecac93a7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\799159f82f5b4c181e88e116c193abdf.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7b25890f40a7656d5f7173f67064b5df.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7e60ee8b4e8c6a38f44163b4df6be353.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\7f6bf5d0e9f4a3a5f7a622ef26b98b52.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\808449541c6fc482ba7d0df77b210152.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\81ec31ef4ae8a80c79e663aa9059efc5.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8481d186816af30624e8f2cd0381ce9f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\875418d45c9d4e7c6dfaec07b15bdd71.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\876ab49aeaa36ae7d3b4af416e79d12c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8a1ee69fca76de0696cd4b6f1c8259d4.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8a3ce88178090f5b7040b77f493a8437.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8ace7ee2c63017b17281ebbeb8a0f2cd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8ad3b9f5314b5939db9bb402cfbf68ca.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8beb8ea9056f2ac9d3cab6194bb20acb.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8cc19200e88a9a75a6d43645001aeccc.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8f56393305cac15a5303a5f5d960cf15.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\8fe5dd6387dfee6f5ffb094413b32e86.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\92b3d6eab4294701fd4fa6741c84a968.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\93ef753f2364c22266563964be0d158e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\96c050cb42a8026001cc3d00e0ff6855.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\96d2ace62404ee5af12a2067e217c199.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\99b5a95ea4e2b860919b0bfce78c072a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\99db893f141c54d8cc2c139d6cf873bb.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\9a42e5af468332bbd13affa455bdbd73.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\9a4e31be48b8d046ab158e7bc92f8803.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\9b6239cb823fd3213638adce7e04e7f3.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\9d3b4370d412763254fdac0fad9a7783.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\9dc4aa1c0ba6e7f69c8d6b634a7a5e1d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a0a5c1e76d44ecb4988da40f2d315ee4.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a0dafc37ae82b45505ce60fa6bb59bf5.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a0ea9c2f79fa452fae68dc3456d19cbb.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a1a21dd7b50f7f7ce5f36657a453dba1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a2315046a40228c27959cf5458fb03e7.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a2fec35e9664a4c88f6f50869a80ef93.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a336dcc8b55ad5d08d96f67c54627f9b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a43621057afcb0fed19a4b1ecdf6d385.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a47ba4fba738e0e5d54b4ebd247c03a5.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a52d533278a44ecdbae37a5a9352c326.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a7e31d6239a4a2071c20ed269756cb8f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a8b5823c164d668cb8a8be761565e819.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a91a4681fe678d49743e72b2dbb93ec1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\a93f19f034295ee9f8fec30a1b83aa1f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\aa100e7910c5e18d8088e5f4c8a4febf.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\af328534b43b7f3db5d233a4714c5dba.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\af4af15c56290a38fc7cd3edb6e96fc8.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b0e5d8c6cb54c54eea8f67a96d6257c2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b22fa33ae5714e54c843fdf90143312f.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b309201127e1990d7a9b55a59709aee3.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b512dabb428d846c7b3a33c105dfba59.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b5c8716b93a747392e8828dfc2246c43.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b7c06716ab450fb6a38c208ef31587de.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b80416ffd7a57af5e1d33f3c1f11e67d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b912574e246fb5106a7bea615adbc294.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\b9f0dfe49b32e88ad38368d84239b729.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bc0979d1dbc58e152ea81096f4717eb1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bc592b9599267cb3271fa670c86c4cdd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bcbbd5b65e16f0c7e3d55a20159436ff.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bd6f600f5a6329272e191b61ede9c40b.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bd84ce5902019933777889931f16a644.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\be0db8bc55ac15d1f53fa1dd3f51ae07.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\be3da7c272b34309c5c6764696d8f4ba.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\be703a76b024f310a08f9559a4485aaf.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\bf7c401123459e42fc335579935c8d54.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c0dded6d2a8936ebe5feb21b099de1e1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c17b91273bd49523af6dff4d974d040e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c28ce13f3615117a7fccf4cca46a7159.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c34ef6b1cec86a7b0e0dd7b2f5facafb.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c3654813acafbde2d8c0dfdf813aae8d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c4849a6b543029998c4b8af1fcf91cfd.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c66b3cb827e0c81125ffcfddd662879d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c768d3b38448db3e6d2da1892dc9369d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c88cc37a908876578ea85d4710209266.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\c92222af35df12a2f2ad3e8a0a58921e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ca430e8678a50eecb8ec23e2c0141654.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ca43f41a47a3cc79b349d19a3c201e08.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\cb92d74c33288313cd3887a04875b0c9.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ccee608850e7e677b0fb8735fd5b9d4d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d0157246db073dd4f494258325f56c55.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d0255de6a4438eb54e2834ea9f112db4.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d0a08222e6d39dffd1dc77f5ca5ccdf0.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d1418eb75a47f646d33650e3b6fd8599.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d20288654ecd35afa244fb527470419c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d210029d359a1af87f35935da5b0a671.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d285aa50c25dd17eb509ec11715c17ce.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d29b45868a65adaac83ddda2dc574ea1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d441b741517ce896492dd6725d9a98d1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d5113ef297fc0ba91c84e7a24ae30b0c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d531989668feb468a34bd0e540cafb1e.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d6c8aba90b4bbc3f2f3b5be68e39aa7a.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d7b3e3b80e06581c2e9468cc8d5ef816.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\d85008d0dbe78e876840c8a091a45578.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\db12fd39126d76f021274899c959d7e4.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\db99598124208367fe89533e1b657c49.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\dbf311157d2e5a7d4f058d6e5d195b03.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\dcc0c2fa9ab92559393bc2e3d2cdb552.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\dea476d9f68409d29604b046e2165006.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\dfe1452038b7db5f0429d5f18cfef837.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e0668126b2260d28b69a295558fb44b8.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e3d84ebfce5c1bbaf5118dc7f96d4285.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e40d29847b43b3e0368c97a9856cedb1.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e4b6ca46c12055198738a7b1a2774b7c.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e4ef6e706e6824866cad800168c70d25.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e60d0c9d887f2965f382bcad5aaa2360.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e7e873cc32826b535fc64cff2fc793ad.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\e994b654675cabe99593083abe390e40.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ebc36ae0b8d66635c7153e6a64a63e50.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ec5a9777ff7d4dcccb7f5c77c29b981d.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ec691b49aa516bc9826ae5223e44a1f0.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ee4d97b2dec80d7159c3f3f192b0ebaf.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f03fe65ecd48d956a94f95e9c7ff5319.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f0e302e2dbf8ab985d18b34ee4565f34.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f30590f5f7bcbc14bcebddc87580cebe.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f4596447a1946d127a9437b5d6845f49.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f562c8d75019263a12e9839d2935cdf3.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\f6f5a5334b3668056664dca14be0e1d2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\fab84b3e1e12a166dc76c001c5139b58.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\fb63e4f630a8876e6534af52b0baed80.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\fdb7b2d9a0e84ea7681b323cab7af507.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\fddeb4bb59874c8caa9b1c96f78ba4cc.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\fe3026323f43ed10020d7d4e4a6dbb45.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.angular\\cache\\14.1.0\\babel-webpack\\ff80616bd8e86329599d82c0babe7be2.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.browserslistrc",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.editorconfig",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.gitignore",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.vscode\\extensions.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.vscode\\launch.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\.vscode\\tasks.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\angular.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\karma.conf.js",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\package-lock.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\package.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\README.md",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.component.css",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.component.html",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.component.spec.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.component.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.module.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\assets\\.gitkeep",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\environments\\environment.prod.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\environments\\environment.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\favicon.ico",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\index.html",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\main.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\polyfills.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\styles.css",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\test.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\stryker.conf.mjs",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\trace.log",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\tsconfig.app.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\tsconfig.json",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\tsconfig.spec.json"
+]
+[36m18:42:22 (26736) DEBUG ProjectReader[39m Files to mutate: [
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.component.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\app\\app.module.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\main.ts",
+  "C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\renderer\\polyfills.ts"
+]
+[36m18:42:22 (26736) DEBUG TemporaryDirectory[39m Using temp directory "C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp"
+[36m18:42:22 (26736) DEBUG Instrumenter[39m Instrumenting 4 source files with mutants
+[36m18:42:22 (26736) DEBUG Instrumenter[39m Instrumented renderer\app\app.component.ts (1 mutant(s))
+[36m18:42:22 (26736) DEBUG Instrumenter[39m Instrumented renderer\app\app.module.ts (0 mutant(s))
+[36m18:42:22 (26736) DEBUG Instrumenter[39m Instrumented renderer\main.ts (4 mutant(s))
+[36m18:42:22 (26736) DEBUG Instrumenter[39m Instrumented renderer\polyfills.ts (0 mutant(s))
+[32m18:42:22 (26736) INFO Instrumenter[39m Instrumented 4 source file(s) with 5 mutant(s)
+[36m18:42:22 (26736) DEBUG TSConfigPreprocessor[39m Rewriting file ProjectFile {
+  fs: [FileSystem],
+  name: 'C:\\Users\\milkef\\source\\sandbox\\stryker-test\\src-alt\\tsconfig.json',
+  mutate: false
+}
+[32m18:42:22 (26736) INFO ConcurrencyTokenProvider[39m Creating 8 test runner process(es).
+[36m18:42:22 (26736) DEBUG ChildProcessProxy[39m Started CheckerWorker in child process 20764
+[36m18:42:23 (20764) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:23 (20764) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:23 (26736) DEBUG Sandbox[39m Creating a sandbox for files in C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061
+[36m18:42:23 (26736) DEBUG Sandbox[39m Start symlink node_modules
+[36m18:42:23 (26736) DEBUG Sandbox[39m Create symlink from C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules to C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061\node_modules
+[32m18:42:23 (26736) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[36m18:42:23 (26736) DEBUG BroadcastReporter[39m Broadcasting to reporters ["progress-append-only","clear-text","html"]
+[36m18:42:23 (26736) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in child process 30532
+[36m18:42:23 (26736) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in child process 17276
+[36m18:42:23 (17276) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:23 (17276) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:23 (30532) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:23 (30532) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:24 (30532) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061
+[36m18:42:24 (17276) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061
+[36m18:42:24 (17276) DEBUG AngularProjectStarter[39m Starting Angular tests: ng test --progress=false --karma-config=C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules\@stryker-mutator\karma-runner\stryker-karma.conf.cjs
+[36m18:42:24 (30532) DEBUG AngularProjectStarter[39m Starting Angular tests: ng test --progress=false --karma-config=C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules\@stryker-mutator\karma-runner\stryker-karma.conf.cjs
+[36m18:42:26 (30532) DEBUG stryker-karma.conf.js[39m Importing config from "C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061\karma.conf.js"
+[36m18:42:26 (17276) DEBUG stryker-karma.conf.js[39m Importing config from "C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061\karma.conf.js"
+[34m18:42:26 (26736) TRACE ChildProcessProxy[39m [33m26 07 2022 18:42:26.266:WARN [karma-server]: [39m`autowatch` and `singleRun` are both `false`. In order to execute tests use `karma run`.
+
+[34m18:42:26 (26736) TRACE ChildProcessProxy[39m [33m26 07 2022 18:42:26.266:WARN [karma-server]: [39m`autowatch` and `singleRun` are both `false`. In order to execute tests use `karma run`.
+
+[34m18:42:26 (26736) TRACE ChildProcessProxy[39m Another process, with id 23384, is currently running ngcc.
+Waiting up to 250s for it to finish.
+(If you are sure no ngcc process is running then you should delete the lock-file at C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/.ngcc_lock_file.)
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m 
+Error: renderer/app/app.component.ts:13:3 - error TS2630: Cannot assign to 'stryNS_9fa48' because it is a function.
+
+13   stryNS_9fa48 = retrieveNS;
+     ~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:40:3 - error TS2630: Cannot assign to 'stryCov_9fa48' because it is a function.
+
+40   stryCov_9fa48 = cover;
+     ~~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:41:21 - error TS2345: Argument of type 'IArguments' is not assignable to parameter of type '[]'.
+
+41   cover.apply(null, arguments);
+                       ~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:44:27 - error TS7006: Parameter 'id' implicitly has an 'any' type.
+
+44 function stryMutAct_9fa48(id) {
+                             ~~
+
+
+Error: renderer/app/app.component.ts:47:21 - error TS7006: Parameter 'id' implicitly has an 'any' type.
+
+47   function isActive(id) {
+                       ~~
+
+
+Error: renderer/app/app.component.ts:59:3 - error TS2630: Cannot assign to 'stryMutAct_9fa48' because it is a function.
+
+59   stryMutAct_9fa48 = isActive;
+     ~~~~~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:70:55 - error TS2554: Expected 0 arguments, but got 1.
+
+70   title = stryMutAct_9fa48("0") ? "" : (stryCov_9fa48("0"), 'src-alt');
+                                                         ~~~
+
+
+
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.824:INFO [karma-server]: [39mKarma v6.4.0 server started at http://localhost:9877/
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.825:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m 
+Error: renderer/app/app.component.ts:13:3 - error TS2630: Cannot assign to 'stryNS_9fa48' because it is a function.
+
+13   stryNS_9fa48 = retrieveNS;
+     ~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:40:3 - error TS2630: Cannot assign to 'stryCov_9fa48' because it is a function.
+
+40   stryCov_9fa48 = cover;
+     ~~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:41:21 - error TS2345: Argument of type 'IArguments' is not assignable to parameter of type '[]'.
+
+41   cover.apply(null, arguments);
+                       ~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:44:27 - error TS7006: Parameter 'id' implicitly has an 'any' type.
+
+44 function stryMutAct_9fa48(id) {
+                             ~~
+
+
+Error: renderer/app/app.component.ts:47:21 - error TS7006: Parameter 'id' implicitly has an 'any' type.
+
+47   function isActive(id) {
+                       ~~
+
+
+Error: renderer/app/app.component.ts:59:3 - error TS2630: Cannot assign to 'stryMutAct_9fa48' because it is a function.
+
+59   stryMutAct_9fa48 = isActive;
+     ~~~~~~~~~~~~~~~~
+
+
+Error: renderer/app/app.component.ts:70:55 - error TS2554: Expected 0 arguments, but got 1.
+
+70   title = stryMutAct_9fa48("0") ? "" : (stryCov_9fa48("0"), 'src-alt');
+                                                         ~~~
+
+
+
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.839:INFO [launcher]: [39mStarting browser ChromeHeadless
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.932:INFO [karma-server]: [39mKarma v6.4.0 server started at http://localhost:9876/
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.933:INFO [launcher]: [39mLaunching browsers ChromeHeadless with concurrency unlimited
+
+[34m18:42:36 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:36.950:INFO [launcher]: [39mStarting browser ChromeHeadless
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:37.334:INFO [Chrome Headless 103.0.5060.134 (Windows 10)]: [39mConnected on socket NW4d8cLSEu90WguLAAAB with id 66060327
+
+[32m18:42:37 (26736) INFO DryRunExecutor[39m Starting initial test run (karma test runner with "perTest" coverage analysis). This may take a while.
+[36m18:42:37 (26736) DEBUG DryRunExecutor[39m Using timeout of 300000 ms.
+[36m18:42:37 (26736) DEBUG TimeoutDecorator[39m Starting timeout timer (300000 ms) for a test run
+[36m18:42:37 (26736) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in child process 29708
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [32m26 07 2022 18:42:37.430:INFO [Chrome Headless 103.0.5060.134 (Windows 10)]: [39mConnected on socket wMK_zQBZ8M1H-dRkAAAB with id 16161265
+
+[36m18:42:37 (26736) DEBUG ChildProcessProxy[39m Started ChildProcessTestRunnerWorker in child process 8080
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [33m26 07 2022 18:42:37.613:WARN [web-server]: [39m404: /_karma_webpack_/main.js
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m Chrome Headless 103.0.5060.134 (Windows 10): Executed 0 of 0[32m SUCCESS[39m (0 secs / 0 secs)
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [1A[2KChrome Headless 103.0.5060.134 (Windows 10): Executed 0 of 0[32m SUCCESS[39m (0.012 secs / 0 secs)
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [32mTOTAL: 0 SUCCESS[39m
+
+[32m18:42:37 (26736) INFO DryRunExecutor[39m Initial test run succeeded. Ran 0 tests in 0 seconds (net 0 ms, overhead 298 ms).
+[36m18:42:37 (26736) DEBUG Stryker[39m Not removing the temp dir because an error occurred
+[91m18:42:37 (26736) ERROR Stryker[39m No tests were executed. Stryker will exit prematurely. Please check your configuration.
+[36m18:42:37 (17276) DEBUG KarmaTestRunner[39m karma run done with  0
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [33m26 07 2022 18:42:37.654:WARN [Chrome Headless 103.0.5060.134 (Windows 10)]: [39mDisconnected (0 times) Client disconnected from CONNECTED state (transport error)
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [31mChrome Headless 103.0.5060.134 (Windows 10) ERROR[39m
+  Disconnected Client disconnected from CONNECTED state (transport error)
+
+Chrome Headless 103.0.5060.134 (Windows 10) ERROR
+  Disconnected Client disconnected from CONNECTED state (transport error)
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [33m26 07 2022 18:42:37.658:WARN [Chrome Headless 103.0.5060.134 (Windows 10)]: [39mDisconnected (0 times) Client disconnected from CONNECTED state (transport error)
+
+[34m18:42:37 (26736) TRACE ChildProcessProxy[39m [1A[2K[31mChrome Headless 103.0.5060.134 (Windows 10) ERROR[39m
+  Disconnected Client disconnected from CONNECTED state (transport error)
+Chrome Headless 103.0.5060.134 (Windows 10): Executed 0 of 0[32m SUCCESS[39m (0.012 secs / 0 secs)
+Chrome Headless 103.0.5060.134 (Windows 10) ERROR
+  Disconnected Client disconnected from CONNECTED state (transport error)
+
+[36m18:42:37 (29708) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:37 (29708) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:37 (8080) DEBUG PluginLoader[39m Loading plugin @stryker-mutator/karma-runner
+[36m18:42:37 (8080) DEBUG PluginLoader[39m Loading plugin file:///C:/Users/milkef/source/sandbox/stryker-test/src-alt/node_modules/@stryker-mutator/core/dist/src/reporters/index.js
+[36m18:42:38 (29708) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061
+[36m18:42:38 (8080) DEBUG ChildProcessProxyWorker[39m Changing current working directory for this process to C:\Users\milkef\source\sandbox\stryker-test\src-alt\.stryker-tmp\sandbox1664061
+[36m18:42:38 (29708) DEBUG AngularProjectStarter[39m Starting Angular tests: ng test --progress=false --karma-config=C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules\@stryker-mutator\karma-runner\stryker-karma.conf.cjs
+[36m18:42:38 (26736) DEBUG ChildProcessProxy[39m Disposing of worker process 29708
+[36m18:42:38 (8080) DEBUG AngularProjectStarter[39m Starting Angular tests: ng test --progress=false --karma-config=C:\Users\milkef\source\sandbox\stryker-test\src-alt\node_modules\@stryker-mutator\karma-runner\stryker-karma.conf.cjs
+[36m18:42:38 (26736) DEBUG ChildProcessProxy[39m Disposing of worker process 8080
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Disposing of worker process 17276
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Kill 17276
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Disposing of worker process 30532
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Kill 30532
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Kill 29708
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Kill 8080
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Disposing of worker process 20764
+[36m18:42:39 (26736) DEBUG ChildProcessProxy[39m Kill 20764
