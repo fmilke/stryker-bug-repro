@@ -4,10 +4,10 @@ const config = {
   _comment:
     "This config was generated using 'stryker init'. Please see the guide for more information: https://stryker-mutator.io/docs/stryker-js/guides/angular",
   mutate: [
-    "src/**/*.ts",
-    "!src/**/*.spec.ts",
-    "!src/test.ts",
-    "!src/environments/*.ts",
+    "renderer/**/*.ts",
+    "!renderer/**/*.spec.ts",
+    "!renderer/test.ts",
+    "!renderer/environments/*.ts",
   ],
   testRunner: "karma",
   karma: {
